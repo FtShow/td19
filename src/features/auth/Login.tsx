@@ -34,16 +34,16 @@ export const Login = () => {
         initialValues: {
             email: "",
             password: "",
-            rememberMe: false,
+            rememberMe: true,
         },
         onSubmit: (values, formikHelpers: FormikHelpers<FormValues>) => {
             dispatch(authThunk.login(values))
                 .unwrap()
                 .then((res) => {
-                    debugger
+
                 })
                 .catch((error: BaseResponseType) => {
-                    debugger
+
                     console.log(error)
                     console.log(error.fieldsErrors)
                     error.fieldsErrors.forEach((fieldError)=>{
